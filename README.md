@@ -4,7 +4,7 @@ Skill editorial compartida para **Usina de Justicia**.
 
 Convierte material bruto —textos, PDFs, enlaces, entrevistas, imágenes, datos o combinaciones de esos insumos— en contenido editorial enriquecido, verificado y listo para cargar en WordPress.
 
-La skill **no publica en WordPress**, no modifica el sitio web y no realiza commits sobre `UsinaDeJusticia/usina-de-justicia`. Su trabajo termina al entregar el paquete editorial listo para que una persona lo cargue en `wp.usinadejusticia.org.ar/wp-admin/`.
+La skill **no ejecuta acciones de publicación ni modifica la infraestructura o los repositorios del sitio**. Su función es entregar un paquete editorial listo para ser cargado en el gestor de contenidos utilizado por la organización.
 
 ## Fuente de verdad
 
