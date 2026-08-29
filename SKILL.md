@@ -33,7 +33,7 @@ Victim-centered does not mean fact-free or legally careless. Credibility protect
 4. **Decide whether outside research adds value.** Use `references/research-and-sourcing.md`. Research is conditional, not mandatory. Prefer primary sources when adding context.
 5. **Check for conflicts and gaps.** Compare sources with one another. Look for inconsistent names, dates, institutions, copied passages, legal references, unsupported claims, and contradictions.
 6. **Write for the actual case.** Preserve the substance of the supplied material, make hidden information visible when useful, and add only verifiable context. Do not pad for length, keywords, or an imagined SEO score.
-7. **Prepare separated WordPress fields.** Follow `references/output-contract.md` and the current publishing contract in `references/site-contract.md`. The user must be able to copy each pasteable field without deleting labels, explanations, alerts, or unrelated content.
+7. **Prepare one publishable Markdown body.** Follow `references/output-contract.md` and `references/site-contract.md`. The primary deliverable is one copyable Markdown block containing only the finished article body that belongs in WordPress.
 8. **Run a silent editorial control.** Only surface an editorial alert when a real issue requires the user's attention. If there is no meaningful issue, do not mention the control step.
 
 ## Enrichment rules
@@ -76,20 +76,18 @@ See `references/research-and-sourcing.md` for the source hierarchy and verificat
 
 ## Output interface rules
 
-The final answer is an operational interface, not a single document.
+The final answer must minimize editing before publication.
 
-- Do not wrap title, excerpt, category, body, attachments, and alerts into one copyable artifact.
-- When the harness supports separate writing/editable blocks, put each pasteable WordPress field in its own block and keep the field label outside it.
-- A copyable title block contains only the title.
-- A copyable excerpt block contains only the excerpt.
-- A copyable body block contains only publishable article body content.
-- Category is normally shown as a simple selection value outside the body.
-- Do not output `LISTO PARA WORDPRESS` inside any copyable block.
-- Do not output tags by default. The user's current publishing workflow does not require them.
+- Produce **one primary Markdown/writing block** containing the complete article body and nothing else.
+- Do not put `LISTO PARA WORDPRESS`, `TÍTULO`, `EXTRACTO`, `CATEGORÍA`, `CUERPO`, `DOCUMENTOS PARA ADJUNTAR`, image instructions, or alert text inside that block.
+- The WordPress title is not duplicated inside the body. If a title suggestion is useful, show only the final title itself outside the Markdown block, without a `TÍTULO` label.
+- Do not output a separate excerpt by default. Write the opening paragraph so it can serve as a strong summary. Only provide a separate excerpt if the user explicitly asks for one or confirms they need to fill that CMS field manually.
+- Infer the category internally. Mention the category outside the Markdown block only when it is operationally useful to the user.
+- Do not output tags by default.
 - Do not output image guidance when no image was supplied, unless the user explicitly asks for image help.
-- When images are supplied, identify only actual supplied candidates and provide alt text where useful.
-- Keep document/link instructions outside the article body.
-- Keep editorial alerts mechanically and visually separate from every publishable block.
+- When actual images are supplied, keep image-selection guidance outside the main article block and put each required alt text in a **separate copyable block**.
+- Do not create a default `DOCUMENTOS PARA ADJUNTAR` section. Mention attachment handling only when there is a concrete operational reason.
+- Keep editorial alerts mechanically and visually separate from the publishable Markdown block.
 
 ## Editorial alerts
 
@@ -117,5 +115,5 @@ Before producing the final package, follow `references/site-contract.md`. The ke
 - `references/site-contract.md` — current WordPress/frontend contract, valid categories, and what not to duplicate.
 - `references/content-types.md` — adaptive structures for different kinds of Usina content.
 - `references/research-and-sourcing.md` — conditional research, source hierarchy, verification, and media-framing rules.
-- `references/output-contract.md` — exact default deliverable and field-separation rules for WordPress.
+- `references/output-contract.md` — exact default deliverable and single-block publishing rules.
 - `references/examples.md` — examples of how the workflow adapts without becoming a rigid template.
