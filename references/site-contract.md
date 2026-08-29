@@ -4,7 +4,7 @@ Use this reference to avoid making the editorial skill do work already handled b
 
 ## Publishing boundary
 
-The user publishes posts manually through the existing WordPress admin at `wp.usinadejusticia.org.ar/wp-admin`.
+The user publishes posts manually through the organization's existing WordPress administration interface.
 
 The skill's job ends with a publication-ready editorial package. Do not generate deployment instructions, commits, branches, merges, JSON-LD, sitemap changes, canonical tags, Open Graph markup, or frontend code unless the user separately asks for technical work.
 
