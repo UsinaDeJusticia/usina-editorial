@@ -1,84 +1,93 @@
 # Default output contract
 
-The goal is not to present a descriptive package. The goal is to make each WordPress field immediately usable without deleting labels or unrelated material after copying.
+The primary deliverable is **one single copyable Markdown block containing the complete article body that belongs in the WordPress content editor**.
 
-## Field-separation rule
+The user should be able to copy that block once and paste it into WordPress without deleting labels, metadata, operational notes, alerts, image instructions, or other assistant text.
 
-Never place the complete deliverable inside one monolithic writing block, editable artifact, Markdown block, or copyable container.
+## Primary Markdown block
 
-When the harness supports independent writing/editable blocks, use **one separate copyable block per field that the user must paste**. Put the field label outside the block. The block itself must contain only the value to paste.
+For a normal article, produce exactly one main writing/Markdown block.
 
-For a complete article, use this order:
-
-### TÍTULO
-
-Place the label outside the copyable block. The block contains only the final title.
-
-- No `TÍTULO` text inside the block.
-- No `LISTO PARA WORDPRESS` heading.
-- No `#`, `<h1>`, publication date, commentary, or alternatives unless the user asked for options.
-
-### EXTRACTO
-
-Place the label outside the copyable block. The block contains only the final excerpt.
-
-- 1-2 self-sufficient sentences.
-- Complement the title instead of merely repeating it.
-
-### CATEGORÍA
-
-State exactly one current category from `site-contract.md` as a simple selection value. This normally does not need a writing block because the user selects the category in WordPress rather than pasting prose.
-
-### CUERPO
-
-Use a **separate copyable block containing only the article body**.
-
-The body must:
+That block must contain only publishable article-body content:
 
 - start directly with the lede;
-- omit the page title and publication date;
-- omit field labels such as `CUERPO`;
-- contain only text that belongs in the WordPress content field.
+- include every paragraph that belongs in the article;
+- include genuine internal H2 headings when they improve structure;
+- include bullet lists only when they belong in the published article;
+- include publication-facing source/document links only when the user actually wants them visible in the article;
+- omit the WordPress page title because the site renders it separately as the article H1;
+- omit the publication date because the site renders it separately;
+- omit field labels and workflow labels;
+- omit category, excerpt, tags, image instructions, alt text, attachment-management notes, research notes, and editorial alerts.
 
-Use genuine H2 section headings only when the article benefits from sections. In Markdown-capable harnesses, represent them as `## Heading`; in rich-text harnesses, use actual heading level 2 semantics.
+Never place strings such as `LISTO PARA WORDPRESS`, `TÍTULO`, `EXTRACTO`, `CATEGORÍA`, `CUERPO`, `DOCUMENTOS PARA ADJUNTAR`, `IMAGEN DESTACADA`, or `ALERTA EDITORIAL` inside the main block.
 
-**Never use a standalone bold line as a fake section heading.** Bold text is for emphasis inside prose. This keeps real article headings visually and structurally distinguishable from ordinary emphasis.
+The main block is not a template to be completed by the user. It is the finished publication text.
 
-Short articles may have no internal headings at all.
+## Title
+
+The WordPress title is a separate CMS field and must not be duplicated inside the article body.
+
+When providing a suggested title, show **only the final title itself outside the main Markdown block**, without a `TÍTULO` label and without wrapping it into a second copyable artifact unless the user explicitly asks for a separate title block.
+
+Do not provide multiple title alternatives unless requested.
+
+## Excerpt
+
+Do not output a separate excerpt by default.
+
+Instead, write the opening paragraph so it is concise, self-sufficient, and suitable to become or inform WordPress's automatic excerpt/description when applicable.
+
+Only provide a separate excerpt if the user explicitly asks for one or confirms that they need to fill a manual excerpt field.
+
+## Category
+
+Infer the correct current category internally.
+
+If the user benefits from knowing which category to select, mention it outside the main Markdown block as a brief operational note. Never place the category inside the publishable body.
+
+Do not turn category selection into a separate section of the article.
 
 ## Tags
 
 Do **not** output suggested tags by default. Tags are not part of the user's current publishing workflow.
 
-Only discuss or suggest tags if the user explicitly asks for them or explicitly confirms that tags are available and relevant in the CMS workflow being used.
+Only discuss tags if the user explicitly asks for them or confirms that tags are available and relevant in the CMS workflow being used.
 
-## Featured image and alt text
+## Images and alt text
 
-Only include an image section when one of these conditions is true:
+Only discuss images when:
 
-1. the user actually supplied one or more usable images/visual assets; or
-2. the user explicitly asks for help choosing or proposing an image.
+1. the user supplied one or more usable images/visual assets; or
+2. the user explicitly asks for image help.
 
-If the user did not supply an image and did not ask for an image suggestion, **omit the image section entirely**. Do not invent or recommend a hypothetical stock/editorial image merely because featured images are useful on the site.
+If no image was supplied and no image help was requested, say nothing about images.
 
 When an actual image is supplied:
 
-- identify the specific supplied image to use;
-- if several were supplied, choose the strongest candidate and say which one;
-- provide factual alt text in its own copyable block when an alt field is useful;
+- identify the supplied image to use outside the main Markdown block;
+- if several were supplied, choose the strongest candidate and identify it clearly;
+- provide the alt text in **a separate copyable block**, never inside the main article Markdown;
+- if several images need alt text, provide one separate alt block per actual image;
 - never expose private data visible in the image unnecessarily.
 
-## Documents and links
+## Documents and attachments
 
-If supplied documents or links need to remain attached/linked in the final post, list them **outside the article body block** under a short operational note such as `Documentos para adjuntar` or `Enlaces para incluir`.
+Do not create a default `DOCUMENTOS PARA ADJUNTAR` section.
 
-Do not place attachment-management instructions inside the copyable article body.
+The user already knows which materials they supplied. Mention attachment handling outside the main Markdown block only when there is a concrete reason the user needs an operational instruction, such as:
+
+- one document should not be published because it exposes personal data;
+- one source contains an inconsistency that requires review;
+- a specific document should be linked visibly from the article and this is not already represented in the body.
+
+If a document link is intended to be visible to readers as part of the published article, it may appear naturally at the end of the main Markdown block. Do not add generic attachment-management prose to the article.
 
 ## Editorial alert
 
 The editorial control is always silent unless a real problem requires attention.
 
-When an alert is necessary, it must be **completely separate from every publishable/copyable block**. Never place it inside the article body, the same writing block, or the same Markdown artifact as the publication text.
+When an alert is necessary, place it **outside the main Markdown block and outside every image-alt block**. It must never be captured when the user copies the article.
 
 Use a clearly non-publishable heading such as:
 
@@ -91,31 +100,43 @@ Then state briefly:
 - whether it was omitted, neutralized, or left unresolved in the draft;
 - what the user should verify before publishing, if anything.
 
-If the harness supports callouts or separate UI blocks, use a separate non-writing callout. The user must be able to copy the article body without capturing the alert.
-
 If there is no real alert, do not mention the editorial-control step.
 
-## Harness fallback
+## Article heading semantics
 
-If the harness does not support independent writing blocks, preserve the same separation concept with clearly isolated sections. Never wrap title, excerpt, category, body, operational notes, and alerts into a single copyable artifact.
+Inside the main Markdown block:
+
+- use `##` only for genuine article section headings;
+- never use a standalone bold sentence as a fake heading;
+- use bold only for genuine emphasis inside prose;
+- short articles may contain no internal headings.
+
+## Harness behavior
+
+When the harness supports a writing/editable Markdown block, use exactly one for the article body.
+
+Do not create multiple blocks for title, excerpt, category, body, or attachments.
+
+A second copyable block is justified only for alt text belonging to an actual supplied image, or when the user explicitly asks for another separately copyable field.
 
 ## Output quality checks
 
 Before delivering, verify that:
 
-- copying the title captures only the title;
-- copying the excerpt captures only the excerpt;
-- copying the body captures only publishable article content;
-- no `LISTO PARA WORDPRESS`, `TÍTULO`, `EXTRACTO`, `CATEGORÍA`, `CUERPO`, or alert text is inside a field's copyable content;
+- there is one primary copyable Markdown block for the full article body;
+- copying that block captures only publishable article content;
+- no workflow labels or CMS field names are inside it;
+- the title is not duplicated as an H1 inside the body;
+- no separate excerpt is shown unless requested;
 - tags are absent unless explicitly requested;
 - image guidance is absent unless an actual image was supplied or the user asked for image help;
-- real section headings use H2 semantics rather than bold-only pseudo-headings;
-- title and excerpt do not simply repeat one another;
-- the opening paragraph explains the event without requiring the attachments;
+- any alt text is outside the main block in a separate block;
+- attachment-management instructions are absent unless concretely necessary;
+- any editorial alert is mechanically and visually separate from the publishable article;
+- genuine article headings use H2 semantics rather than bold-only pseudo-headings;
+- the opening paragraph is self-sufficient and useful as an automatic summary;
 - article depth matches the material rather than a fixed word count;
 - facts added from research are supported;
 - victim-centered framing is preserved when crime is involved;
 - legal status is accurate;
-- category is one of the six current categories;
-- attachments support the article but do not contain its only substantive explanation;
-- an alert, if necessary, is visibly and mechanically separate from everything the user will publish.
+- the inferred category is one of the six current categories.
