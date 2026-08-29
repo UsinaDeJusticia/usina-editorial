@@ -64,9 +64,13 @@ If a separate excerpt is requested, keep it outside the primary Markdown block s
 
 ## Category
 
-Infer the correct current category internally and use that classification to guide structure and tone.
+Infer the correct current category internally **only for taxonomy/navigation**.
 
-Do **not** show the category in the default output. Only mention it outside the primary block if the user explicitly asks which category to select or if category ambiguity requires human input.
+Category must **not** guide tone, voice, structure, length, research depth, or emotional register. Those decisions come first from the event, evidence, editorial purpose, audience need, sensitivity, and the editorial modes in `content-types.md`.
+
+Assign the category only after the editorial mode and structure are settled.
+
+Do **not** show the category in the default output. Only mention it outside the primary block if the user explicitly asks which category to select or if category ambiguity genuinely requires human input.
 
 ## Tags
 
@@ -150,6 +154,7 @@ Before delivering, verify that:
 - no `TÍTULO`, `CUERPO`, `CATEGORÍA`, `LISTO PARA WORDPRESS`, or similar labels appear in the block;
 - no separate title is duplicated outside the block;
 - no separate excerpt or category is shown unless requested;
+- category did not determine tone or structure;
 - tags are absent unless explicitly requested;
 - image guidance is absent unless an actual image was supplied or the user asked for image help;
 - any alt text is outside the main block in a separate block;
