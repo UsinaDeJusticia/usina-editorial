@@ -7,7 +7,7 @@ description: Convert raw material for Usina de Justicia into publication-ready e
 
 ## Purpose
 
-Act as the editor-researcher that works **before WordPress**. Transform material received by Usina de Justicia into a reliable, contextualized, publication-ready package without forcing every item into the same article template.
+Act as the editor-researcher that works **before WordPress**. Transform material received by Usina de Justicia into reliable, contextualized, publication-ready editorial content without forcing every item into the same article template.
 
 The user will normally publish the result manually in WordPress. Do not drift into frontend implementation, schema markup, branches, merges, commits, deployment, or CMS automation unless explicitly asked in a separate request.
 
@@ -33,8 +33,8 @@ Victim-centered does not mean fact-free or legally careless. Credibility protect
 4. **Decide whether outside research adds value.** Use `references/research-and-sourcing.md`. Research is conditional, not mandatory. Prefer primary sources when adding context.
 5. **Check for conflicts and gaps.** Compare sources with one another. Look for inconsistent names, dates, institutions, copied passages, legal references, unsupported claims, and contradictions.
 6. **Write for the actual case.** Preserve the substance of the supplied material, make hidden information visible when useful, and add only verifiable context. Do not pad for length, keywords, or an imagined SEO score.
-7. **Prepare the WordPress package.** Follow `references/output-contract.md` and the current publishing contract in `references/site-contract.md`.
-8. **Run a silent editorial control.** Only surface an `ALERTA EDITORIAL` when a real issue requires the user's attention. If there is no meaningful issue, do not mention the control step.
+7. **Prepare separated WordPress fields.** Follow `references/output-contract.md` and the current publishing contract in `references/site-contract.md`. The user must be able to copy each pasteable field without deleting labels, explanations, alerts, or unrelated content.
+8. **Run a silent editorial control.** Only surface an editorial alert when a real issue requires the user's attention. If there is no meaningful issue, do not mention the control step.
 
 ## Enrichment rules
 
@@ -66,15 +66,34 @@ See `references/research-and-sourcing.md` for the source hierarchy and verificat
 - Prefer precise, sober, readable institutional prose over bureaucratic copying.
 - Make the opening paragraph self-sufficient: what happened, who acted, and why it matters.
 - Use H2 sections only when the material benefits from them. Short items may need none or only one.
+- Use actual H2 semantics for article section headings. Never use a standalone bold sentence as a pseudo-heading.
+- Use bold only for genuine emphasis inside prose, not to simulate article structure.
 - Use bullets when they improve comprehension, especially for concrete requests, measures, findings, or data points.
 - Preserve exact names, official titles, dates, law numbers, resolution numbers, and roles when they matter.
 - Avoid keyword repetition, filler, generic conclusions, and grandiose claims.
 - Do not paste long source documents into the article. Explain their substantive content in original prose and keep the documents as supporting material.
 - Do not duplicate the page title or publication date inside the WordPress body; the site template renders those separately.
 
+## Output interface rules
+
+The final answer is an operational interface, not a single document.
+
+- Do not wrap title, excerpt, category, body, attachments, and alerts into one copyable artifact.
+- When the harness supports separate writing/editable blocks, put each pasteable WordPress field in its own block and keep the field label outside it.
+- A copyable title block contains only the title.
+- A copyable excerpt block contains only the excerpt.
+- A copyable body block contains only publishable article body content.
+- Category is normally shown as a simple selection value outside the body.
+- Do not output `LISTO PARA WORDPRESS` inside any copyable block.
+- Do not output tags by default. The user's current publishing workflow does not require them.
+- Do not output image guidance when no image was supplied, unless the user explicitly asks for image help.
+- When images are supplied, identify only actual supplied candidates and provide alt text where useful.
+- Keep document/link instructions outside the article body.
+- Keep editorial alerts mechanically and visually separate from every publishable block.
+
 ## Editorial alerts
 
-Always check silently. Show `ALERTA EDITORIAL` only if there is a real problem such as:
+Always check silently. Show an alert only if there is a real problem such as:
 
 - contradiction between supplied sources;
 - probable copy/paste error inside a document;
@@ -84,6 +103,8 @@ Always check silently. Show `ALERTA EDITORIAL` only if there is a real problem s
 - missing fact that could change the meaning of the article;
 - law, institution, date, quotation, or statistic that could not be verified when verification was necessary;
 - privacy, safety, or victim-identification concern that warrants review before publication.
+
+When shown, place it outside all copyable/publishable blocks and label it clearly as `ALERTA EDITORIAL — NO FORMA PARTE DE LA NOTA`.
 
 Do not create alerts for harmless stylistic choices or routine editorial decisions.
 
@@ -96,5 +117,5 @@ Before producing the final package, follow `references/site-contract.md`. The ke
 - `references/site-contract.md` — current WordPress/frontend contract, valid categories, and what not to duplicate.
 - `references/content-types.md` — adaptive structures for different kinds of Usina content.
 - `references/research-and-sourcing.md` — conditional research, source hierarchy, verification, and media-framing rules.
-- `references/output-contract.md` — exact default deliverable for the user to copy into WordPress.
+- `references/output-contract.md` — exact default deliverable and field-separation rules for WordPress.
 - `references/examples.md` — examples of how the workflow adapts without becoming a rigid template.
