@@ -25,16 +25,31 @@ Usina de Justicia exists to defend victims of crime. When a publication concerns
 
 Victim-centered does not mean fact-free or legally careless. Credibility protects Usina and the victims it represents.
 
+## Critical separation: editorial mode vs CMS category
+
+Do **not** use the WordPress category to decide the article's tone, voice, length, structure, research depth, or emotional register.
+
+Treat these as separate decisions:
+
+1. **Event:** what actually happened and what makes it publishable now.
+2. **Editorial purpose:** what the piece needs to accomplish for readers — inform, explain, document an action, communicate a position, tell a human story, analyze evidence, contextualize a media appearance, commemorate, or provide practical guidance.
+3. **Editorial mode and tone:** choose the writing approach from `references/content-types.md` based on the event, evidence, sensitivity, and audience need.
+4. **CMS category:** only after the article is conceptually settled, assign the most appropriate WordPress category using `references/site-contract.md`.
+
+The category tells WordPress **where the piece belongs**. It does not tell the writer **how the piece must sound**.
+
 ## Workflow
 
 1. **Read all supplied material before drafting.** Inspect the user's text plus every relevant attachment, link, image, transcript, table, or document. Do not treat the short text pasted by the user as the full story when supporting material contains more substance.
-2. **Determine the content type.** Use `references/content-types.md` to choose the appropriate depth, structure, and tone. Do not force legal/incidence structure onto interviews, family stories, institutional news, accompaniment activities, or data reports.
-3. **Separate evidence from framing.** Extract facts, direct statements, dates, names, legal bases, requests, outcomes, and relevant context. Distinguish these from journalistic interpretation, opinion, speculation, and emotionally loaded framing.
-4. **Decide whether outside research adds value.** Use `references/research-and-sourcing.md`. Research is conditional, not mandatory. Prefer primary sources when adding context.
-5. **Check for conflicts and gaps.** Compare sources with one another. Look for inconsistent names, dates, institutions, copied passages, legal references, unsupported claims, and contradictions.
-6. **Write for the actual case.** Preserve the substance of the supplied material, make hidden information visible when useful, and add only verifiable context. Do not pad for length, keywords, or an imagined SEO score.
-7. **Prepare one publishable Markdown handoff.** Follow `references/output-contract.md` and `references/site-contract.md`. The primary deliverable is one copyable Markdown block containing the final optimized title as its first H1 line followed by the complete article text.
-8. **Run a silent editorial control.** Only surface an editorial alert when a real issue requires the user's attention. If there is no meaningful issue, do not mention the control step.
+2. **Identify the event and editorial purpose.** Determine what happened, why it matters now, and what the publication must help readers understand or do.
+3. **Choose editorial mode independently of category.** Use `references/content-types.md` to select the appropriate tone, depth, and structure. Combine modes only when useful. Do not infer tone from `Incidencia`, `Prensa`, `Historias`, `Acompañamiento`, `Institucional`, or `Observatorio`.
+4. **Separate evidence from framing.** Extract facts, direct statements, dates, names, legal bases, requests, outcomes, and relevant context. Distinguish these from journalistic interpretation, opinion, speculation, and emotionally loaded framing.
+5. **Decide whether outside research adds value.** Use `references/research-and-sourcing.md`. Research is conditional, not mandatory. Prefer primary sources when adding context.
+6. **Check for conflicts and gaps.** Compare sources with one another. Look for inconsistent names, dates, institutions, copied passages, legal references, unsupported claims, and contradictions.
+7. **Write for the actual case.** Preserve the substance of the supplied material, make hidden information visible when useful, and add only verifiable context. Do not pad for length, keywords, or an imagined SEO score.
+8. **Assign the CMS category separately.** Use `references/site-contract.md` only after tone and structure are already decided.
+9. **Prepare one publishable Markdown handoff.** Follow `references/output-contract.md` and `references/site-contract.md`. The primary deliverable is one copyable Markdown block containing the final optimized title as its first H1 line followed by the complete article text.
+10. **Run a silent editorial control.** Only surface an editorial alert when a real issue requires the user's attention. If there is no meaningful issue, do not mention the control step.
 
 ## Enrichment rules
 
@@ -64,6 +79,8 @@ See `references/research-and-sourcing.md` for the source hierarchy and verificat
 
 - Write in clear Argentine Spanish unless the user requests another language.
 - Prefer precise, sober, readable institutional prose over bureaucratic copying.
+- Let tone vary with editorial purpose: informative, explanatory, firm institutional, human/testimonial, analytical, media-contextual, practical, commemorative, or mixed as the material requires.
+- Keep the victims-first doctrine constant without forcing every piece into the same emotional or rhetorical tone.
 - Make the opening paragraph self-sufficient: what happened, who acted, and why it matters.
 - Use H2 sections only when the material benefits from them. Short items may need none or only one.
 - Use actual H2 semantics for article section headings. Never use a standalone bold sentence as a pseudo-heading.
@@ -114,8 +131,8 @@ Before producing the final package, follow `references/site-contract.md`. The ke
 
 ## Reference map
 
-- `references/site-contract.md` — current WordPress/frontend contract, valid categories, and what not to duplicate.
-- `references/content-types.md` — adaptive structures for different kinds of Usina content.
+- `references/site-contract.md` — current WordPress/frontend contract and valid CMS categories. Use it for categorization, not tone.
+- `references/content-types.md` — editorial modes, tone, structure, and complexity decisions independent of category.
 - `references/research-and-sourcing.md` — conditional research, source hierarchy, verification, and media-framing rules.
 - `references/output-contract.md` — exact default deliverable and single-block publishing rules.
 - `references/examples.md` — examples of how the workflow adapts without becoming a rigid template.
