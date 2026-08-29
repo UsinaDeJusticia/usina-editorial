@@ -64,12 +64,29 @@ Default target:
 - usually about 120-180 characters when possible, but clarity outranks a hard character target;
 - should add information rather than merely repeat the title.
 
+## Tags
+
+The frontend can read and display WordPress tags when historical posts already contain them, but tags are **not part of the user's current manual publishing workflow**.
+
+Therefore:
+
+- do not suggest tags by default;
+- do not include a tags field in the standard output;
+- only discuss tags if the user explicitly asks for them or the publishing workflow changes in the future.
+
 ## Featured image and alt text
 
-If the user supplied an image, identify the best candidate and write factual alt text based on visible content. Do not stuff keywords into alt text.
+A featured image is useful on the site, but the editorial skill must not invent an image task that the user did not request.
 
-If no image was supplied, a brief featured-image suggestion may be useful, but do not invent that an image exists.
+Therefore:
+
+- if the user supplied one or more images, identify the strongest usable image and write factual alt text;
+- if no image was supplied, omit image and alt fields entirely;
+- only propose an unsupplied image when the user explicitly asks for help finding, choosing, generating, or briefing an image;
+- never imply that a hypothetical image is part of the material received.
 
 ## Attachments and links
 
 Supporting PDFs or original documents may remain attached or linked after the article body. The body must still explain the substantive information readers need; do not make the attachment the only place where the story exists.
+
+Keep attachment/link instructions outside the copyable article body.
