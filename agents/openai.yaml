@@ -1,0 +1,9 @@
+interface:
+  display_name: "Usina Editorial"
+  short_description: "Edita, investiga y prepara notas de Usina para WordPress"
+policy:
+  products:
+    - chatgpt
+    - codex
+    - api
+  allow_implicit_invocation: true
