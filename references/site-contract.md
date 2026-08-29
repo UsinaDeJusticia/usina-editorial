@@ -1,6 +1,6 @@
 # Current site and WordPress contract
 
-Use this reference to avoid making the editorial skill do work already handled by the website.
+Use this reference to avoid making the editorial skill do work already handled by the website while preserving the user's preferred one-copy handoff.
 
 ## Publishing boundary
 
@@ -13,7 +13,7 @@ The skill's job ends with publication-ready editorial content. Do not generate d
 The current frontend reads published WordPress posts and handles the technical page layer, including:
 
 - page-level article rendering;
-- the visible article H1 from the WordPress title;
+- the visible article H1 from the WordPress title field;
 - author, publication date, and reading time outside the WordPress body;
 - `NewsArticle` structured data;
 - canonical and social metadata;
@@ -22,13 +22,23 @@ The current frontend reads published WordPress posts and handles the technical p
 - article image handling;
 - alternate Markdown delivery for compatible agents.
 
+## Important distinction: handoff block vs published body
+
+The website ultimately renders the title from the WordPress title field, so the final published body must not contain a duplicate H1.
+
+However, the user's preferred editorial handoff deliberately places the **final optimized title as the first Markdown H1 inside the single copyable block** so the user can copy the entire result in one action. The user then moves/sets that first-line title in the WordPress title field while arranging the post in the CMS.
+
 Therefore:
 
-- do **not** repeat the article title as an H1 inside the body;
-- do **not** prepend the publication date to the body;
-- do **not** output technical metadata code;
-- make the opening paragraph concise and self-sufficient so it also works well as the basis for summaries/descriptions;
+- **do include** exactly one optimized H1 title as the first line of the skill's primary Markdown handoff;
+- treat that H1 as part of the handoff workflow, not as an instruction to publish a duplicate H1 inside the final WordPress body;
+- do not create a second title outside the primary block;
+- do not prepend the publication date to the article text;
+- do not output technical metadata code;
+- make the opening paragraph concise and self-sufficient so it works well as the basis for summaries/descriptions;
 - only provide a separate manual excerpt when the user explicitly asks for it or confirms that field must be completed manually.
+
+This distinction must remain consistent with `SKILL.md` and `output-contract.md`.
 
 ## Valid current categories
 
@@ -52,9 +62,11 @@ Use these short current category names, not similarly named legacy categories.
 - **Institucional** — organizational announcements, recognitions, milestones, governance, events, partnerships, and institutional communications that do not fit another section better.
 - **Observatorio** — reports, datasets, statistics, monitoring, publications, and evidence-oriented analysis.
 
-When two categories appear plausible, choose based on the article's primary event, not every topic mentioned in it.
+When two categories appear plausible, choose based on the article's primary editorial object, not every topic mentioned in it.
 
-The category is a CMS selection, not article-body content. Keep it outside the primary Markdown block if it is shown to the user.
+**Category is taxonomy, not tone.** Choose editorial mode, voice, structure, depth, and research needs from the event, evidence, purpose, audience, and sensitivity first. Assign the CMS category separately afterward. Never make `Incidencia`, `Prensa`, `Historias`, or any other category impose a writing style.
+
+The category is a CMS selection, not article-body content. Keep it outside the primary Markdown block if it must be shown to the user.
 
 ## Tags
 
