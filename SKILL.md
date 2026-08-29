@@ -33,7 +33,7 @@ Victim-centered does not mean fact-free or legally careless. Credibility protect
 4. **Decide whether outside research adds value.** Use `references/research-and-sourcing.md`. Research is conditional, not mandatory. Prefer primary sources when adding context.
 5. **Check for conflicts and gaps.** Compare sources with one another. Look for inconsistent names, dates, institutions, copied passages, legal references, unsupported claims, and contradictions.
 6. **Write for the actual case.** Preserve the substance of the supplied material, make hidden information visible when useful, and add only verifiable context. Do not pad for length, keywords, or an imagined SEO score.
-7. **Prepare one publishable Markdown body.** Follow `references/output-contract.md` and `references/site-contract.md`. The primary deliverable is one copyable Markdown block containing only the finished article body that belongs in WordPress.
+7. **Prepare one optimized title plus one publishable Markdown body.** Follow `references/output-contract.md` and `references/site-contract.md`. The title is a required editorial output; the primary copyable artifact is one Markdown block containing only the finished article body that belongs in WordPress.
 8. **Run a silent editorial control.** Only surface an editorial alert when a real issue requires the user's attention. If there is no meaningful issue, do not mention the control step.
 
 ## Enrichment rules
@@ -74,15 +74,33 @@ See `references/research-and-sourcing.md` for the source hierarchy and verificat
 - Do not paste long source documents into the article. Explain their substantive content in original prose and keep the documents as supporting material.
 - Do not duplicate the page title or publication date inside the WordPress body; the site template renders those separately.
 
+## Title optimization
+
+Always provide one final title for a complete publication unless the user explicitly says an existing title must be preserved unchanged.
+
+Optimize the title simultaneously for:
+
+- human clarity;
+- SEO/search discoverability;
+- GEO/AI retrieval and entity clarity;
+- factual precision and Usina's editorial position.
+
+Prefer a concrete formulation that identifies the principal entity, action/event, and relevant subject when useful. Preserve important proper names, institutions, locations, legal instruments, or case identifiers when they materially help readers and machines understand the page.
+
+Do not keyword-stuff, write clickbait, invent urgency or consequences, overstate the sources, or sacrifice readability to an arbitrary character count.
+
+Show only the final title itself above the article block. It may appear as a heading or bold text according to the harness, but do not prepend `TÍTULO`, `SEO TITLE`, or similar labels. Do not provide alternatives unless asked.
+
 ## Output interface rules
 
-The final answer must minimize editing before publication.
+The default visible answer should contain only the content the user actually needs for publication, plus exceptional warnings when necessary.
 
-- Produce **one primary Markdown/writing block** containing the complete article body and nothing else.
+- First show **one final optimized title**, without a field label.
+- Then produce **one primary Markdown/writing block** containing the complete article body and nothing else.
 - Do not put `LISTO PARA WORDPRESS`, `TÍTULO`, `EXTRACTO`, `CATEGORÍA`, `CUERPO`, `DOCUMENTOS PARA ADJUNTAR`, image instructions, or alert text inside that block.
-- The WordPress title is not duplicated inside the body. If a title suggestion is useful, show only the final title itself outside the Markdown block, without a `TÍTULO` label.
+- Do not repeat the title inside the Markdown body.
 - Do not output a separate excerpt by default. Write the opening paragraph so it can serve as a strong summary. Only provide a separate excerpt if the user explicitly asks for one or confirms they need to fill that CMS field manually.
-- Infer the category internally. Mention the category outside the Markdown block only when it is operationally useful to the user.
+- Infer the category internally and do not show it by default. Mention it only if the user asks or category ambiguity requires human input.
 - Do not output tags by default.
 - Do not output image guidance when no image was supplied, unless the user explicitly asks for image help.
 - When actual images are supplied, keep image-selection guidance outside the main article block and put each required alt text in a **separate copyable block**.
@@ -115,5 +133,5 @@ Before producing the final package, follow `references/site-contract.md`. The ke
 - `references/site-contract.md` — current WordPress/frontend contract, valid categories, and what not to duplicate.
 - `references/content-types.md` — adaptive structures for different kinds of Usina content.
 - `references/research-and-sourcing.md` — conditional research, source hierarchy, verification, and media-framing rules.
-- `references/output-contract.md` — exact default deliverable and single-block publishing rules.
+- `references/output-contract.md` — exact default deliverable, title optimization, and single-block publishing rules.
 - `references/examples.md` — examples of how the workflow adapts without becoming a rigid template.
