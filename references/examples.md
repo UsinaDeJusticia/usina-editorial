@@ -22,15 +22,17 @@ A one-paragraph message says that Usina filed requests with two victim-assistanc
 - Extract the actual request, legal basis, identified problem, and proposed measures.
 - Explain legal material in readable prose without turning the note into a legal brief.
 - Produce a richer article because the primary documents contain real additional information.
-- Deliver one primary Markdown block containing the final optimized title as its first H1 line, followed by the complete publishable article.
+- Deliver one final optimized title as a normal rendered heading, followed by the complete article in normal rendered text.
+- Do not wrap the article in a fenced Markdown block or expose raw `.md` source.
 - Do not output tags or hypothetical image suggestions.
-- If a source document contains a probable copy/paste error, omit the error from the article and surface an editorial alert outside the publishable block.
+- If a source document contains a probable copy/paste error, omit the error from the article and surface an editorial alert outside the publishable text.
 
 **Bad behavior**
 
 - Assume that `Incidencia` requires an aggressive, argumentative, or legalistic tone.
 - Copy the petition paragraph by paragraph.
 - Add generic SEO filler.
+- Force a code-style Markdown block merely to create a one-click copy surface.
 
 ## Example B — Public demand: firm institutional
 
@@ -117,8 +119,8 @@ The user receives a brief description and several photos of an activity with a v
 
 - Keep the note concise when the event is simple.
 - Avoid unnecessary personal/location details.
-- Recommend only the strongest supplied image outside the main article block.
-- Put alt text for the selected image in a separate copyable block.
+- Recommend only the strongest supplied image outside the article.
+- Put alt text outside the article as ordinary rendered text unless the user explicitly requests a copy-only block.
 
 ## Example F — Statistical report
 
