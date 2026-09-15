@@ -1,33 +1,34 @@
 # Default output contract
 
-The default deliverable is **one single copyable Markdown block** containing the optimized title and the complete article text the user will take into WordPress.
+The default deliverable is a **finished article rendered normally in the conversation interface** so the user can move it into WordPress with minimal editing.
 
-The user prefers copying everything in one action and then moving/adjusting the title manually inside the CMS. Optimize for that workflow rather than splitting CMS fields into separate blocks.
+Do not present the article as source code. Do not wrap it in a fenced Markdown block, do not label it as `.md`, and do not optimize for one-click copying if that requires exposing raw markup.
 
-## Primary Markdown block
+## Default rendered handoff
 
-For a normal article, produce exactly one main writing/Markdown block.
+For a normal article:
 
-The **first line must always be the final optimized title**, formatted as a Markdown H1:
+1. Show exactly **one final optimized title** as the first visible element, using a normal rendered heading.
+2. Leave normal visual spacing and begin the lede immediately below it.
+3. Continue with the complete publishable article body.
+4. Use rendered H2 headings only when they improve structure.
+5. Use bullets, emphasis, and reader-facing links only when they belong in the article.
 
-`# Final optimized title`
+The title is conceptually a separate WordPress field even though it appears directly above the article in the handoff. The body begins with the lede and must not contain a duplicate title.
 
-Then leave one blank line and start the article lede.
+Never add workflow labels such as `LISTO PARA WORDPRESS`, `TÍTULO`, `EXTRACTO`, `CATEGORÍA`, `CUERPO`, `DOCUMENTOS PARA ADJUNTAR`, or `IMAGEN DESTACADA` around or inside the article by default.
 
-The same block contains the complete publishable article text:
+## Rendering rule
 
-- optimized title as the first line;
-- self-sufficient lede immediately after the title;
-- every paragraph that belongs in the article;
-- genuine internal H2 headings (`##`) when they improve structure;
-- bullet lists only when they belong in the published article;
-- publication-facing source/document links only when they are intended to be visible to readers.
+Prefer normal rich-text/rendered presentation.
 
-The user will manually place the first-line title into the WordPress title field and can remove/move that first line from the body before publication. Do not create a second title outside the block.
+- Do **not** enclose the article in triple backticks.
+- Do **not** use a `markdown` code fence.
+- Do **not** present the answer as a raw Markdown artifact or `.md` file by default.
+- If the harness uses Markdown as its rendering language, use ordinary unfenced Markdown so headings and lists appear rendered to the user.
+- If rich rendering is unavailable, use clean plain text with the title and section headings on their own lines rather than exposing raw Markdown source syntax.
 
-Never add workflow labels or CMS labels such as `LISTO PARA WORDPRESS`, `TÍTULO`, `EXTRACTO`, `CATEGORÍA`, `CUERPO`, `DOCUMENTOS PARA ADJUNTAR`, or `IMAGEN DESTACADA` around or inside the primary block.
-
-The block is not a template. It is the finished editorial handoff.
+The user should see the article, not the markup used to render it.
 
 ## Title quality — always required
 
@@ -60,7 +61,7 @@ Write the opening paragraph so it is concise, self-sufficient, and suitable to b
 
 Only provide a separate excerpt if the user explicitly asks for one or confirms that a manual excerpt field must be completed.
 
-If a separate excerpt is requested, keep it outside the primary Markdown block so it cannot be confused with article content.
+If a separate excerpt is requested, place it outside the article and present it as ordinary rendered text rather than a code block unless the user explicitly asks for copy-only formatting.
 
 ## Category
 
@@ -70,7 +71,7 @@ Category must **not** guide tone, voice, structure, length, research depth, or e
 
 Assign the category only after the editorial mode and structure are settled.
 
-Do **not** show the category in the default output. Only mention it outside the primary block if the user explicitly asks which category to select or if category ambiguity genuinely requires human input.
+Do **not** show the category in the default output. Only mention it outside the article if the user explicitly asks which category to select or if category ambiguity genuinely requires human input.
 
 ## Tags
 
@@ -89,29 +90,29 @@ If no image was supplied and no image help was requested, say nothing about imag
 
 When an actual image is supplied:
 
-- identify the supplied image to use outside the main Markdown block;
+- identify the supplied image to use outside the article;
 - if several were supplied, choose the strongest candidate and identify it clearly;
-- provide the alt text in **a separate copyable block**, never inside the primary article Markdown;
-- if several images need alt text, provide one separate alt block per actual image;
+- provide factual alt text outside the article as ordinary rendered text;
+- use a separate copy-only block for alt text only if the user explicitly requests that format;
 - never expose private data visible in the image unnecessarily.
 
 ## Documents and attachments
 
 Do not create a default `DOCUMENTOS PARA ADJUNTAR` section outside the article.
 
-The user already knows which materials were supplied. Mention attachment handling outside the main Markdown block only when there is a concrete reason the user needs an operational instruction, such as:
+The user already knows which materials were supplied. Mention attachment handling outside the article only when there is a concrete reason the user needs an operational instruction, such as:
 
 - one document should not be published because it exposes personal data;
 - one source contains an inconsistency that requires review;
 - a specific document should be linked visibly from the article and this is not already represented in the body.
 
-If a document or source link is intended to be visible to readers as part of the publication, include it naturally in the primary Markdown block.
+If a document or source link is intended to be visible to readers as part of the publication, include it naturally in the article.
 
 ## Editorial alert
 
 The editorial control is always silent unless a real problem requires attention.
 
-When an alert is necessary, place it **outside the primary Markdown block and outside every image-alt block**. It must never be captured when the user copies the publication content.
+When an alert is necessary, place it **outside the publishable article and outside image/alt guidance**. It must never look like part of the note.
 
 Use a clearly non-publishable heading such as:
 
@@ -126,40 +127,43 @@ Then state briefly:
 
 If there is no real alert, do not mention the editorial-control step.
 
-## Heading semantics inside the block
+## Heading semantics
 
-- The first line is the only H1 and represents the final title handed off to the CMS.
-- Use `##` only for genuine article section headings.
+- The displayed title is the only H1-equivalent element in the editorial handoff.
+- The WordPress title field ultimately renders the public page H1; therefore the body portion must not repeat the title.
+- Use rendered H2 semantics only for genuine article section headings.
 - Never use a standalone bold sentence as a fake heading.
 - Use bold only for genuine emphasis inside prose.
 - Short articles may contain no H2 headings.
 
 ## Harness behavior
 
-When the harness supports a writing/editable Markdown block, use exactly **one primary block** containing title + article.
+When the harness supports rich or rendered text, use it directly.
 
-Do not create a second title block, body block, category block, attachment block, or routine excerpt block.
+When the harness internally uses Markdown, keep it **unfenced** so the UI renders the article normally. Never use a code fence merely to create a copy button.
 
-Additional copyable blocks are justified only for alt text belonging to actual supplied images, or when the user explicitly requests another separately copyable field.
+When the harness cannot render formatting, use clean plain text rather than raw Markdown source.
+
+Additional separately formatted material is justified only when the user explicitly requests it or when an editorial alert must be isolated from the article.
 
 ## Output quality checks
 
 Before delivering, verify that:
 
-- there is exactly one primary copyable Markdown block;
-- its first line is exactly one final optimized H1 title;
+- the user sees a finished article rather than Markdown source;
+- the article is not inside a fenced code block;
+- there is exactly one final optimized title;
 - the title is specific, source-supported, readable, and useful for SEO and machine/agent comprehension without keyword stuffing;
-- the lede begins after the title and is self-sufficient;
-- copying the block captures the complete editorial handoff and no workflow labels;
-- no `TÍTULO`, `CUERPO`, `CATEGORÍA`, `LISTO PARA WORDPRESS`, or similar labels appear in the block;
-- no separate title is duplicated outside the block;
-- no separate excerpt or category is shown unless requested;
+- the lede begins immediately after the title and is self-sufficient;
+- the body does not repeat the title;
+- no workflow or CMS labels appear inside the article;
+- no separate excerpt or category is shown unless requested or operationally necessary;
 - category did not determine tone or structure;
 - tags are absent unless explicitly requested;
 - image guidance is absent unless an actual image was supplied or the user asked for image help;
-- any alt text is outside the main block in a separate block;
+- any image/alt guidance is outside the article;
 - attachment-management instructions are absent unless concretely necessary;
-- any editorial alert is mechanically and visually separate from the primary block;
+- any editorial alert is mechanically and visually separate from the article;
 - genuine internal article headings use H2 semantics rather than bold-only pseudo-headings;
 - article depth matches the material rather than a fixed word count;
 - facts added from research are supported;
