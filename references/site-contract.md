@@ -1,6 +1,6 @@
 # Current site and WordPress contract
 
-Use this reference to avoid making the editorial skill do work already handled by the website while preserving the user's preferred one-copy handoff.
+Use this reference to avoid making the editorial skill do work already handled by the website while preserving a low-editing publishing handoff.
 
 ## Publishing boundary
 
@@ -22,17 +22,18 @@ The current frontend reads published WordPress posts and handles the technical p
 - article image handling;
 - alternate Markdown delivery for compatible agents.
 
-## Important distinction: handoff block vs published body
+## Important distinction: editorial handoff vs published body
 
-The website ultimately renders the title from the WordPress title field, so the final published body must not contain a duplicate H1.
+The website ultimately renders the public article title from the WordPress title field, so the final WordPress body must not contain a duplicate H1.
 
-However, the user's preferred editorial handoff deliberately places the **final optimized title as the first Markdown H1 inside the single copyable block** so the user can copy the entire result in one action. The user then moves/sets that first-line title in the WordPress title field while arranging the post in the CMS.
+The skill should nevertheless show the final optimized title to the user as the first visible element of the editorial handoff, followed by the article body. Treat the displayed title as the value intended for the WordPress title field, not as part of the body.
 
 Therefore:
 
-- **do include** exactly one optimized H1 title as the first line of the skill's primary Markdown handoff;
-- treat that H1 as part of the handoff workflow, not as an instruction to publish a duplicate H1 inside the final WordPress body;
-- do not create a second title outside the primary block;
+- **do show** exactly one final optimized title as a normal rendered heading at the top of the response;
+- **do not include** that title again inside the body portion;
+- render the article normally in the interface instead of enclosing it in a fenced Markdown/code block;
+- do not expose raw `.md` source merely to make the answer copyable;
 - do not prepend the publication date to the article text;
 - do not output technical metadata code;
 - make the opening paragraph concise and self-sufficient so it works well as the basis for summaries/descriptions;
@@ -66,7 +67,7 @@ When two categories appear plausible, choose based on the article's primary edit
 
 **Category is taxonomy, not tone.** Choose editorial mode, voice, structure, depth, and research needs from the event, evidence, purpose, audience, and sensitivity first. Assign the CMS category separately afterward. Never make `Incidencia`, `Prensa`, `Historias`, or any other category impose a writing style.
 
-The category is a CMS selection, not article-body content. Keep it outside the primary Markdown block if it must be shown to the user.
+The category is a CMS selection, not article-body content. Keep it outside the article if it must be shown to the user.
 
 ## Tags
 
@@ -84,11 +85,12 @@ A featured image is useful on the site, but the editorial skill must not invent 
 
 Therefore:
 
-- if the user supplied one or more images, identify the strongest usable image outside the primary article block;
-- put alt text for an actual selected image in its own separate copyable block;
+- if the user supplied one or more images, identify the strongest usable image outside the article;
+- provide factual alt text outside the article as ordinary rendered text;
 - if no image was supplied, omit image and alt fields entirely;
 - only propose an unsupplied image when the user explicitly asks for help finding, choosing, generating, or briefing an image;
-- never imply that a hypothetical image is part of the material received.
+- never imply that a hypothetical image is part of the material received;
+- do not put image guidance or alt text inside a fenced code block unless the user explicitly asks for copy-only formatting.
 
 ## Attachments and links
 
