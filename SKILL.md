@@ -48,7 +48,7 @@ The category tells WordPress **where the piece belongs**. It does not tell the w
 6. **Check for conflicts and gaps.** Compare sources with one another. Look for inconsistent names, dates, institutions, copied passages, legal references, unsupported claims, and contradictions.
 7. **Write for the actual case.** Preserve the substance of the supplied material, make hidden information visible when useful, and add only verifiable context. Do not pad for length, keywords, or an imagined SEO score.
 8. **Assign the CMS category separately.** Use `references/site-contract.md` only after tone and structure are already decided.
-9. **Prepare one publishable Markdown handoff.** Follow `references/output-contract.md` and `references/site-contract.md`. The primary deliverable is one copyable Markdown block containing the final optimized title as its first H1 line followed by the complete article text.
+9. **Prepare a rendered publication handoff.** Follow `references/output-contract.md` and `references/site-contract.md`. By default, show one final optimized title as a normal rendered heading followed by the complete article body in normal rendered text. Do not wrap the article in a fenced Markdown/code block and do not present raw `.md` source as the deliverable.
 10. **Run a silent editorial control.** Only surface an editorial alert when a real issue requires the user's attention. If there is no meaningful issue, do not mention the control step.
 
 ## Enrichment rules
@@ -83,7 +83,8 @@ See `references/research-and-sourcing.md` for the source hierarchy and verificat
 - Keep the victims-first doctrine constant without forcing every piece into the same emotional or rhetorical tone.
 - Make the opening paragraph self-sufficient: what happened, who acted, and why it matters.
 - Use H2 sections only when the material benefits from them. Short items may need none or only one.
-- Use actual H2 semantics for article section headings. Never use a standalone bold sentence as a pseudo-heading.
+- Use actual heading level 2 semantics for article section headings. If the harness uses Markdown to render rich text, use normal unfenced Markdown so the user sees rendered headings rather than source syntax.
+- Never use a standalone bold sentence as a pseudo-heading.
 - Use bold only for genuine emphasis inside prose, not to simulate article structure.
 - Use bullets when they improve comprehension, especially for concrete requests, measures, findings, or data points.
 - Preserve exact names, official titles, dates, law numbers, resolution numbers, and roles when they matter.
@@ -92,21 +93,22 @@ See `references/research-and-sourcing.md` for the source hierarchy and verificat
 
 ## Output interface rules
 
-The final answer must minimize editing before publication.
+The final answer must look like a finished article ready to move into WordPress, not like source code or a template.
 
-- Produce **one primary Markdown/writing block** containing the final optimized title plus the complete article.
-- The first line of that block must be exactly one Markdown H1: `# Final title`.
-- The title must be optimized for human clarity, SEO, and machine/agent comprehension while remaining factually precise and faithful to Usina's editorial stance.
-- Do not create a second title outside the block.
-- After one blank line, start the lede immediately.
-- Do not put `LISTO PARA WORDPRESS`, `TÍTULO`, `EXTRACTO`, `CATEGORÍA`, `CUERPO`, `DOCUMENTOS PARA ADJUNTAR`, image instructions, or alert text inside that block.
+- Show **one final optimized title** as the first visible element, using a normal rendered heading.
+- After the title, start the lede and complete article body immediately.
+- Render the article normally in the chat/interface. **Never enclose the article in triple backticks, a `markdown` code fence, a raw `.md` block, or a code-style artifact by default.**
+- Underlying Markdown used by the harness is acceptable only when it is rendered for the user; do not expose raw `#` / `##` syntax as code.
+- Use rendered H2 headings, bullets, emphasis, and links only when they improve the article.
+- Do not place workflow labels such as `LISTO PARA WORDPRESS`, `TÍTULO`, `EXTRACTO`, `CATEGORÍA`, `CUERPO`, or `DOCUMENTOS PARA ADJUNTAR` inside the article.
 - Do not output a separate excerpt by default. Write the opening paragraph so it can serve as a strong summary. Only provide a separate excerpt if the user explicitly asks for one or confirms they need to fill that CMS field manually.
-- Infer the category internally. Mention the category outside the Markdown block only if the user asks which category to select or if category ambiguity requires human input.
+- Infer the category internally. Mention the category outside the article only if the user asks which category to select or if category ambiguity genuinely requires human input.
 - Do not output tags by default.
 - Do not output image guidance when no image was supplied, unless the user explicitly asks for image help.
-- When actual images are supplied, keep image-selection guidance outside the main article block and put each required alt text in a **separate copyable block**.
+- When actual images are supplied, keep image-selection guidance and alt text outside the article itself. Present them as ordinary rendered text, not fenced code, unless the user explicitly requests a copy-only block.
 - Do not create a default `DOCUMENTOS PARA ADJUNTAR` section. Mention attachment handling only when there is a concrete operational reason.
-- Keep editorial alerts mechanically and visually separate from the publishable Markdown block.
+- Keep editorial alerts mechanically and visually separate from the publishable article.
+- If the harness cannot render rich text, fall back to clean plain text with the title on its own line and section headings as ordinary text; do not force raw Markdown source or a code fence.
 
 ## Editorial alerts
 
@@ -121,7 +123,7 @@ Always check silently. Show an alert only if there is a real problem such as:
 - law, institution, date, quotation, or statistic that could not be verified when verification was necessary;
 - privacy, safety, or victim-identification concern that warrants review before publication.
 
-When shown, place it outside all copyable/publishable blocks and label it clearly as `ALERTA EDITORIAL — NO FORMA PARTE DE LA NOTA`.
+When shown, place it outside the publishable article and label it clearly as `ALERTA EDITORIAL — NO FORMA PARTE DE LA NOTA`.
 
 Do not create alerts for harmless stylistic choices or routine editorial decisions.
 
@@ -134,5 +136,5 @@ Before producing the final package, follow `references/site-contract.md`. The ke
 - `references/site-contract.md` — current WordPress/frontend contract and valid CMS categories. Use it for categorization, not tone.
 - `references/content-types.md` — editorial modes, tone, structure, and complexity decisions independent of category.
 - `references/research-and-sourcing.md` — conditional research, source hierarchy, verification, and media-framing rules.
-- `references/output-contract.md` — exact default deliverable and single-block publishing rules.
+- `references/output-contract.md` — exact default rendered handoff and publishing-output rules.
 - `references/examples.md` — examples of how the workflow adapts without becoming a rigid template.
