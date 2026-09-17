@@ -77,6 +77,10 @@ If disclosure creates a plausible privacy or safety issue, omit the unnecessary 
 
 ## Links in the finished article
 
-Link to primary or authoritative sources when the link genuinely helps readers verify or understand the claim. Do not clutter the article with a bibliography of everything consulted.
+Research links and publication links are different things. A source used to verify a fact does not become a reader-facing link automatically.
 
-When the user's attachment is the documentary basis of the article, list it under supporting documents/links rather than forcing repeated citations throughout the prose unless a particular claim benefits from an inline link.
+Include a link in the finished article only when it genuinely helps the reader understand or continue the story, when it points to a primary document the reader should consult, or when the user explicitly asks to preserve it. Prefer internal Usina links when they connect direct antecedents or later developments.
+
+Do not clutter the article with a bibliography of everything consulted. Do not expose tool citations, file citations, source IDs, or internal research traces as article content.
+
+When the user's attachment is the documentary basis of the article, explain its substantive content in the article and keep the attachment as supporting material. Do not force repeated citations throughout the prose unless the publishing context specifically requires a reader-facing citation.
