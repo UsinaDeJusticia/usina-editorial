@@ -46,7 +46,7 @@ Typical shape:
 - essential context only;
 - concrete outcome, next step, or current status.
 
-Keep it short when the event is simple. Do not manufacture sections or background merely to make the note look substantial.
+Keep it short only when both the event **and the available evidence** are simple. Do not manufacture sections or background merely to make the note look substantial. A multi-page judicial ruling is not a simple source merely because its operative result can be summarized in one sentence.
 
 ### 2. Explanatory / pedagogical
 
@@ -165,6 +165,23 @@ Possible structures include:
 - **media recap:** event + key intervention + necessary context + original link when publishable.
 
 Never impose a minimum heading count or word count.
+
+### Judicial rulings and other rich primary legal documents
+
+When the main source is a court ruling, legal filing, or official decision with several substantive layers, default to a **developed informative + explanatory** treatment rather than a very short update. Source richness, not page count alone, determines depth.
+
+When supported by the document, preserve enough space to explain:
+
+- the operative decision and its immediate effect;
+- the procedural background that brought the matter before the court;
+- what the lower court or prior authority decided and the relevant rationale;
+- the material arguments raised by the appellant, prosecutor, parties, or intervenors;
+- the court's principal legal reasoning and any precedent it relies on when that precedent helps explain the decision;
+- important limits, caveats, or issues the court expressly did **not** decide;
+- the next procedural step or remaining question;
+- Usina's prior intervention when relevant, without falsely presenting it as the procedural cause of the ruling.
+
+Do not turn the article into a legal brief, but do not collapse a rich ruling into a headline plus a few paragraphs. The reader should understand **what happened, why the court decided it, what changed, what did not change, and what follows**.
 
 ## Category selection is a separate final step
 
