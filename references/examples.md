@@ -164,6 +164,36 @@ Usina marks an organizational anniversary and remembers people/cases connected t
 - Preserve factual precision.
 - Avoid bureaucratic corporate language and avoid melodrama.
 
+## Example H — Judicial update with a prior Usina article
+
+**Input pattern**
+
+The user supplies a new court ruling and says an earlier Usina article should remain linked as the direct antecedent.
+
+**Editorial decision**
+
+- Primary event: the new judicial ruling.
+- Evidence: the supplied ruling is the primary source.
+- Purpose: inform and explain the new procedural development.
+- The earlier Usina article is a deliberate reader-facing link because it connects the chronology.
+
+**Good behavior**
+
+- Read the ruling completely and explain what the court actually decided.
+- If the ruling contains procedural background, the lower-court rationale, the appellant's arguments, the chamber's reasoning, caveats, and next steps, produce a developed informative-explanatory article that preserves those material layers.
+- Keep the earlier Usina article linked once, naturally, because the user explicitly asked to preserve that connection.
+- Use all other consulted sources only for verification unless they independently deserve a reader-facing link.
+- Keep tool citations, file citations, source IDs, and research traces outside the publishable article.
+- Distinguish Usina's prior intervention from the procedural act that formally caused the new ruling when the document supports that distinction.
+
+**Bad behavior**
+
+- Turn every source consulted into a hyperlink.
+- Remove the requested antecedent link in the name of a cleaner article.
+- Present internal verification citations as if they were part of the WordPress copy.
+- Treat host-generated citation chips as if they were editorial links that must be reproduced in the article.
+- Compress a substantively rich multi-page ruling into a short update that omits the parties' arguments, the court's reasoning, or what remains pending.
+
 ## Cross-check before drafting
 
 Ask internally:
