@@ -46,7 +46,7 @@ The category tells WordPress **where the piece belongs**. It does not tell the w
 4. **Separate evidence from framing.** Extract facts, direct statements, dates, names, legal bases, requests, outcomes, and relevant context. Distinguish these from journalistic interpretation, opinion, speculation, and emotionally loaded framing.
 5. **Decide whether outside research adds value.** Use `references/research-and-sourcing.md`. Research is conditional, not mandatory. Prefer primary sources when adding context.
 6. **Check for conflicts and gaps.** Compare sources with one another. Look for inconsistent names, dates, institutions, copied passages, legal references, unsupported claims, and contradictions.
-7. **Write for the actual case.** Preserve the substance of the supplied material, make hidden information visible when useful, and add only verifiable context. Do not pad for length, keywords, or an imagined SEO score.
+7. **Write for the actual case and source richness.** Preserve the substance of the supplied material, make hidden information visible when useful, and add only verifiable context. Do not pad for length, keywords, or an imagined SEO score. Do not compress a substantively rich primary document into a brief update merely because its headline outcome can be stated in one sentence. Multi-page judicial rulings with distinct procedural background, arguments, legal reasoning, operative result, caveats, and next steps normally require a developed informative-explanatory article.
 8. **Assign the CMS category separately.** Use `references/site-contract.md` only after tone and structure are already decided.
 9. **Prepare a rendered publication handoff.** Follow `references/output-contract.md` and `references/site-contract.md`. By default, show one final optimized title as a normal rendered heading followed by the complete article body in normal rendered text. Do not wrap the article in a fenced Markdown/code block and do not present raw `.md` source as the deliverable.
 10. **Run a silent editorial control.** Only surface an editorial alert when a real issue requires the user's attention. If there is no meaningful issue, do not mention the control step.
@@ -90,6 +90,7 @@ See `references/research-and-sourcing.md` for the source hierarchy and verificat
 - Preserve exact names, official titles, dates, law numbers, resolution numbers, and roles when they matter.
 - Avoid keyword repetition, filler, generic conclusions, and grandiose claims.
 - Do not paste long source documents into the article. Explain their substantive content in original prose and keep the documents as supporting material.
+- Let depth follow the amount of meaningful evidence. When a court ruling or legal filing contains several independent layers of substance, cover those layers rather than reducing the piece to a short summary.
 
 ## Output interface rules
 
@@ -109,6 +110,19 @@ The final answer must look like a finished article ready to move into WordPress,
 - Do not create a default `DOCUMENTOS PARA ADJUNTAR` section. Mention attachment handling only when there is a concrete operational reason.
 - Keep editorial alerts mechanically and visually separate from the publishable article.
 - If the harness cannot render rich text, fall back to clean plain text with the title on its own line and section headings as ordinary text; do not force raw Markdown source or a code fence.
+
+## Clean publication surface
+
+Treat the publishable article and the evidence/research layer as separate surfaces.
+
+- Never place tool citations, file citations, source IDs, research traces, internal verification markers, or harness provenance markers inside the publishable article body.
+- Do not convert every source consulted during research into a reader-facing hyperlink. Research sources support the writing; they are not automatically publication links.
+- Include a reader-facing link only when it has a deliberate editorial purpose, such as a directly related Usina antecedent, an authoritative primary document readers should consult, or a link the user explicitly asked to preserve.
+- Preserve user-requested editorial links. Do not remove a requested link merely to make the article cleaner.
+- Avoid duplicating the same editorial link in both prose and a separate callout unless the user explicitly asks for both.
+- When a harness requires provenance or citations for verification, keep that verification outside the publishable article whenever the interface allows it. The text intended for WordPress must remain clean.
+- Treat host-generated citation pills, source chips, or a platform `Sources` panel as interface provenance, not as editorial hyperlinks and not as article content. Do not add duplicate URLs or citation text because those widgets appear. A skill cannot override system-level provenance UI; control only the article text itself.
+- Never generate a `Sources`/`Fuentes` section yourself unless the user explicitly asks for one.
 
 ## Editorial alerts
 
