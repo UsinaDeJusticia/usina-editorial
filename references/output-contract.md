@@ -18,6 +18,18 @@ The title is conceptually a separate WordPress field even though it appears dire
 
 Never add workflow labels such as `LISTO PARA WORDPRESS`, `TÍTULO`, `EXTRACTO`, `CATEGORÍA`, `CUERPO`, `DOCUMENTOS PARA ADJUNTAR`, or `IMAGEN DESTACADA` around or inside the article by default.
 
+## Clean publication surface
+
+The publishable article must be clean and must not expose the research process.
+
+- Do not place tool citations, file citations, source IDs, internal verification markers, harness provenance markers, or research-only URLs inside the article body.
+- Sources consulted for verification do not become reader-facing links by default.
+- Add links only when they have an editorial purpose for the reader or when the user explicitly asks to preserve them.
+- Preserve explicitly requested links and place each one naturally once unless repetition is editorially justified.
+- If the runtime requires citations for traceability, keep them outside the publishable article whenever the interface permits it.
+- Do not deliberately emit citation markup, source IDs, footnotes, or a `Sources`/`Fuentes` list as part of the WordPress copy unless the user explicitly requests that editorial feature.
+- Host-generated source pills/chips or a platform Sources panel are interface metadata, not reader-facing editorial links. Do not duplicate them in the prose. A skill cannot suppress system-level citation UI when the host requires it; ensure the underlying article text remains clean.
+
 ## Rendering rule
 
 Prefer normal rich-text/rendered presentation.
@@ -166,6 +178,7 @@ Before delivering, verify that:
 - any editorial alert is mechanically and visually separate from the article;
 - genuine internal article headings use H2 semantics rather than bold-only pseudo-headings;
 - article depth matches the material rather than a fixed word count;
+- a substantively rich judicial or legal primary document has not been compressed into a thin update merely because the operative result is simple;
 - facts added from research are supported;
 - victim-centered framing is preserved when crime is involved;
 - legal status is accurate;
